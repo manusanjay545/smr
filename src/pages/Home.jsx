@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import { FaShieldAlt, FaClock, FaAward, FaUsers, FaQuoteLeft, FaStar, FaArrowRight } from 'react-icons/fa';
+import { FaShieldAlt, FaClock, FaAward, FaUsers, FaQuoteLeft, FaStar, FaArrowRight, FaInstagram, FaPlay } from 'react-icons/fa';
 import projects from '../data/projects';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -29,6 +29,14 @@ const testimonials = [
   { name: 'Kishore Kumar', loc: 'Veerapandi, Tiruppur', text: 'They helped me build my dream home in Veerapandi, Tiruppur. The quality of construction and attention to detail exceeded my expectations.' },
   { name: 'Ashwin', loc: 'Tiruppur', text: 'From the foundation to the finishing, they treated my house like their own. They understood what I wanted exactly.' },
   { name: 'Priya Ramesh', loc: 'Avinashi, Tiruppur', text: 'Professional team, transparent pricing, and outstanding quality. SMR Constructions made our home-building journey stress-free.' },
+];
+
+const igReels = [
+  { thumb: '/images/reel1.png', url: 'https://www.instagram.com/p/DO6MuTfjI3k/', title: 'Construction Update' },
+  { thumb: '/images/reel2.png', url: 'https://www.instagram.com/p/DWbq4Wmib6E/', title: 'Interior Walkthrough' },
+  { thumb: '/images/reel3.png', url: 'https://www.instagram.com/p/DWWjlubjDZY/', title: 'Site Progress' },
+  { thumb: '/images/reel1.png', url: 'https://www.instagram.com/p/DVbTXFFE1lR/', title: 'Project Highlight' },
+  { thumb: '/images/reel2.png', url: 'https://www.instagram.com/p/DVJR9XgEyl1/', title: 'Home Tour' },
 ];
 
 export default function Home() {
@@ -80,6 +88,45 @@ export default function Home() {
               <Link to="/about" className="btn btn-primary">Learn More <FaArrowRight /></Link>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Instagram Reels Gallery */}
+      <section className="section section-dark" id="ig-gallery">
+        <div className="container">
+          <motion.div className="section-header" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <span className="section-label"><FaInstagram /> Reels</span>
+            <h2>From Our Instagram</h2>
+            <p>Tap to watch our latest reels on Instagram.</p>
+          </motion.div>
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={12}
+            slidesPerView={2.3}
+            loop={true}
+            grabCursor={true}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            breakpoints={{ 640: { slidesPerView: 3.3, spaceBetween: 16 }, 1024: { slidesPerView: 5, spaceBetween: 20 } }}
+            className="ig-swiper"
+          >
+            {igReels.map((reel, i) => (
+              <SwiperSlide key={i}>
+                <a href={reel.url} target="_blank" rel="noreferrer" className="ig-reel-card" title={reel.title}>
+                  <img src={reel.thumb} alt={reel.title} loading="lazy" />
+                  <div className="ig-reel-play">
+                    <FaPlay />
+                  </div>
+                  <div className="ig-reel-label">{reel.title}</div>
+                </a>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="text-center" style={{ marginTop: 40 }}>
+            <a href="https://www.instagram.com/smr_constructions_/" target="_blank" rel="noreferrer" className="btn btn-outline" style={{ borderColor: '#E1306C', color: '#E1306C', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+              <FaInstagram /> Follow @smr_constructions_
+            </a>
+          </div>
         </div>
       </section>
 

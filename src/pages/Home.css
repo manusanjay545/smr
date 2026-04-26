@@ -218,6 +218,77 @@
   line-height: 1.7;
 }
 
+/* ===== Instagram Reels ===== */
+.ig-swiper {
+  padding-bottom: 48px !important;
+}
+
+.ig-swiper .swiper-pagination-bullet-active {
+  background: #E1306C !important;
+}
+
+.ig-reel-card {
+  display: block;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 9/16;
+  cursor: pointer;
+}
+
+.ig-reel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ig-reel-card:hover img {
+  transform: scale(1.08);
+}
+
+.ig-reel-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  background: rgba(0,0,0,0.55);
+  border: 2px solid rgba(255,255,255,0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-base);
+  z-index: 2;
+}
+
+.ig-reel-play svg {
+  color: #fff;
+  font-size: 1rem;
+  margin-left: 3px;
+}
+
+.ig-reel-card:hover .ig-reel-play {
+  background: #E1306C;
+  border-color: #E1306C;
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.ig-reel-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 12px 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
 /* ===== Project Cards ===== */
 .project-card {
   display: block;
