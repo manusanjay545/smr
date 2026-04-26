@@ -127,6 +127,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Meet the CEO */}
+      <section className="section section-gray" id="ceo-section">
+        <div className="container">
+          <motion.div className="ceo-preview" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={stagger}>
+            <motion.div className="ceo-preview__img" variants={fadeUp}>
+              <img src="/images/ceo.jpg" alt="Jeyash Kumar - CEO" loading="lazy" />
+              <div className="ceo-preview__badge">
+                <span className="ceo-preview__badge-text">Jeyash Kumar</span>
+                <span className="ceo-preview__badge-sub">Founder & CEO</span>
+              </div>
+            </motion.div>
+            <motion.div className="ceo-preview__content" variants={fadeUp}>
+              <span className="section-label">Leadership</span>
+              <h2>Building Trust Through Vision and Dedication</h2>
+              <p>Under the visionary leadership of Mr. Jeyash Kumar, SMR Constructions has grown from a humble beginning to one of Tamil Nadu's most trusted real estate developers. His commitment to quality, transparent pricing, and timely delivery remains the cornerstone of our company.</p>
+              <p>"Our goal isn't just to build structures. It's to build lifelong relationships with the families who trust us with their life savings. We bring premium living to everyone without compromising on quality."</p>
+              <div style={{ marginTop: 24 }}>
+                 <a href="https://www.instagram.com/jeyashkumar/" target="_blank" rel="noreferrer" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                   Follow on Instagram <FaArrowRight />
+                 </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="section section-dark" id="why-choose-us">
         <div className="container">
@@ -174,32 +200,6 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Meet the CEO */}
-      <section className="section section-gray" id="ceo-section">
-        <div className="container">
-          <motion.div className="ceo-preview" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={stagger}>
-            <motion.div className="ceo-preview__img" variants={fadeUp}>
-              <img src="/images/ceo.jpg" alt="Jeyash Kumar - CEO" loading="lazy" />
-              <div className="ceo-preview__badge">
-                <span className="ceo-preview__badge-text">Jeyash Kumar</span>
-                <span className="ceo-preview__badge-sub">Founder & CEO</span>
-              </div>
-            </motion.div>
-            <motion.div className="ceo-preview__content" variants={fadeUp}>
-              <span className="section-label">Leadership</span>
-              <h2>Building Trust Through Vision and Dedication</h2>
-              <p>Under the visionary leadership of Mr. Jeyash Kumar, SMR Constructions has grown from a humble beginning to one of Tamil Nadu's most trusted real estate developers. His commitment to quality, transparent pricing, and timely delivery remains the cornerstone of our company.</p>
-              <p>"Our goal isn't just to build structures. It's to build lifelong relationships with the families who trust us with their life savings. We bring premium living to everyone without compromising on quality."</p>
-              <div style={{ marginTop: 24 }}>
-                 <a href="https://www.instagram.com/jeyashkumar/" target="_blank" rel="noreferrer" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                   Follow on Instagram <FaArrowRight />
-                 </a>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>

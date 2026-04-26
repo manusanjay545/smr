@@ -466,6 +466,16 @@
     height: 280px;
   }
 
+  .ceo-preview {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ceo-preview__img {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
   .why-grid { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
 
